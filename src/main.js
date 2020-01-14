@@ -18,4 +18,11 @@ class Visitor {
     }
 }
 
+async load(name) {
+    const fs  = require('fs').promises
+    let data = JSON.stringify(this)
+    try {
+        let query = await fs.writeFile{./Workspace$(this.full_name)}.json.data
+    }
+}
 motso.save();

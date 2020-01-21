@@ -13,13 +13,20 @@ class Visitor {
     }
 
     async save() {
-        fs.appendFile('visitor_{their_full_name}.json', JSON.stringify(this.fullName), (err)=>{
+        let mention = this.full_name.replace(' ','_').toLowerCase();
+
+        fs.appendFile(`visitor_${mention}.json`, JSON.stringify(this.full_name), (err)=>{
             if (err) throw err;
             console.log('done');
         });
+        return(this);
     }
 }
 
-let motso = new Visitor("motso",30,"17/09/2020","00:00am","happy_birthday", "raymond");
+let sekgomotso = new Visitor("sekgomotso shalang",30,"17/09/2020","00:00","happy birthday","Raymond");
 
-motso.save();
+sekgomotso.save();
+
+module.exports = { 
+    Visitor
+}

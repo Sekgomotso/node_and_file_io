@@ -23,6 +23,12 @@ class Visitor {
     }
 }
 
+async function load(full_name) {
+    fs.readFile(`visitor_{full_name}.json`, "utf8", (err, data)=>{
+        console.log(data);
+    })
+}
+
 let sekgomotso = new Visitor("sekgomotso shalang",30,"17/09/2020","00:00","happy birthday","Raymond");
 
 sekgomotso.save();

@@ -1,7 +1,8 @@
 const Visitor = require('../src/main');
 
 describe("function that saves visitors data", ()=>{
-    const name = {
+    beforeEach(()=>{
+        const name = {
         full_name: "sekgomotso shalang",
         Age: 30,
         Date: "17/09/2020",
@@ -19,6 +20,7 @@ describe("function that saves visitors data", ()=>{
     );
 
     it("should return visitor's full name", ()=>{
-        expect(sekgomotso.save()).toEqual(name.full_name)
+        expect(sekgomotso.save()).toBe(name.full_name)
+    })
     })
 })

@@ -3,13 +3,13 @@
 let fs = require('fs');
 
 class Visitor {
-    constructor(full_name, Age, Date, Time, Comments, Assistant) {
+    constructor(full_name, age, date, time, comments, assistant) {
         this.full_name = full_name;
-        this.age = Age;
-        this.dateOfVisit = Date;
-        this.timeOfVisit = Time;
-        this.comments = Comments;
-        this.assistant = Assistant;
+        this.age = age;
+        this.dateOfVisit = date;
+        this.timeOfVisit = time;
+        this.comments = comments;
+        this.assistant = assistant;
     }
 
     async save() {

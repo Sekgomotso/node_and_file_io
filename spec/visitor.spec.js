@@ -3,21 +3,28 @@ const {Visitor} = require('../src/main');
 
 let motso = {
     full_name: "sekgomotso shalang",
-    Age: 30,
-    Date: "17/09/2020",
-    Time: "00:00",
-    Comments: "Happy birthday",
-    Assistant: "Tumi"
+    age: 30,
+    date: "17/09/2020",
+    time: "00:00",
+    comments: "Happy birthday",
+    assistant: "Tumi"
 }
 
 let sekgomotso = new Visitor (
     motso.full_name,
-    motso.Age,
-    motso.Date,
-    motso.Time,
-    motso.Comments,
-    motso.Assistant
+    motso.age,
+    motso.date,
+    motso.time,
+    motso.comments,
+    motso.assistant
 );
+
+describe("function that saves visitors data", ()=>{
+
+    it("should return visitor's age", ()=>{
+        expect(sekgomotso.age).toBe(motso.age);
+    })
+});
 
 describe("function that saves visitors data", ()=>{
 
@@ -26,20 +33,16 @@ describe("function that saves visitors data", ()=>{
     })
 });
 
-describe("function that takes name and grabs visitor's data", ()=>{
-    let sekgomotso;
+describe("function that saves visitors data", ()=>{
 
-    beforeEach(()=>{
-        let name = motso.full_name.replace(' ','_').toLowerCase();
-
-        let load = fs.readFile(`visitor_${name}.json`, 'utf8', (err, data)=>{
-            if(err) throw err;
-            console.log(data);
-        });
-    
-        sekgomotsoLoad = JSON.parse(load("Sekgomotso shalang"))
-    });
-    it("should return age", ()=>{
-        expect(sekgomotso.Age).toBe(sekgomotsoLoad.Age);
+    it("should return assistant's comment", ()=>{
+        expect(sekgomotso.comments).toBe(motso.comments);
     })
-})
+});
+
+describe("function that saves visitors data", ()=>{
+
+    it("should return assistant's name", ()=>{
+        expect(sekgomotso.assistant).toBe(motso.assistant);
+    })
+});
